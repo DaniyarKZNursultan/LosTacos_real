@@ -1,8 +1,122 @@
 {% extends 'lostacos/layout.html' %}
 
+{% load static %}
+
 {% block title %}Главная страница{% endblock %}
 
 {% block content %}
-    <h1>Главная страница</h1>
-    <p>Да да</p>
+    <div class="main">
+        <h1>{{ title }}</h1>
+        <h1><i>Muy pronto</i></h1>
+    </div>
+    <div class="greeting">
+        <h1>Добро пожаловать в Los Tacos: Где Мексика Встречает Вас!</h1>
+        <p>"Los Tacos" – наше мексиканское приключение в сердце города! <br>
+            У нас каждый тако — это маленький кусочек Мексики. <br>
+            Свежие ингредиенты, аутентичные рецепты и теплая атмосфера делают <br>
+            нас вашим выбором для настоящих вкусов мексиканской кухни. </p>
+        <div class="greeting-italic">
+            ¡Bienvenidos!
+        </div>
+    </div>
+    <hr class="next-hr">
+    <div class="recommendation">
+        <h1 class="rec-title">Рекомендуем</h1>
+        <div class="cards">
+            <div class="card">
+                <img src="{% static 'lostacos/img/Baja-Taco.png' %}" alt="">
+                <hr>
+                <div class="card-inside">
+                    <h2>Baja Тако</h2>
+                    <p>Теплые мягкие кукурузные тортильи на гриле, наполненные вашим любимым мясом и покрытые свежеприготовленной острой или неострой сальсой, смесью лука и кинзы.</p>
+                    <button>1890₸</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'lostacos/img/Baja-Taco.png' %}" alt="">
+                <hr>
+                <div class="card-inside">
+                    <h2>Baja Тако</h2>
+                    <p>Теплые мягкие кукурузные тортильи на гриле, наполненные вашим любимым мясом и покрытые свежеприготовленной острой или неострой сальсой, смесью лука и кинзы.</p>
+                    <button>1890₸</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'lostacos/img/Baja-Taco.png' %}" alt="">
+                <hr>
+                <div class="card-inside">
+                    <h2>Baja Тако</h2>
+                    <p>Теплые мягкие кукурузные тортильи на гриле, наполненные вашим любимым мясом и покрытые свежеприготовленной острой или неострой сальсой, смесью лука и кинзы.</p>
+                    <button>1890₸</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'lostacos/img/Baja-Taco.png' %}" alt="">
+                <hr>
+                <div class="card-inside">
+                    <h2>Baja Тако</h2>
+                    <p>Теплые мягкие кукурузные тортильи на гриле, наполненные вашим любимым мясом и покрытые свежеприготовленной острой или неострой сальсой, смесью лука и кинзы.</p>
+                    <button>1890₸</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'lostacos/img/Baja-Taco.png' %}" alt="">
+                <hr>
+                <div class="card-inside">
+                    <h2>Baja Тако</h2>
+                    <p>Теплые мягкие кукурузные тортильи на гриле, наполненные вашим любимым мясом и покрытые свежеприготовленной острой или неострой сальсой, смесью лука и кинзы.</p>
+                    <button>1890₸</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'lostacos/img/Baja-Taco.png' %}" alt="">
+                <hr>
+                <div class="card-inside">
+                    <h2>Baja Тако</h2>
+                    <p>Теплые мягкие кукурузные тортильи на гриле, наполненные вашим любимым мясом и покрытые свежеприготовленной острой или неострой сальсой, смесью лука и кинзы.</p>
+                    <button>1890₸</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'lostacos/img/Baja-Taco.png' %}" alt="">
+                <hr>
+                <div class="card-inside">
+                    <h2>Baja Тако</h2>
+                    <p>Теплые мягкие кукурузные тортильи на гриле, наполненные вашим любимым мясом и покрытые свежеприготовленной острой или неострой сальсой, смесью лука и кинзы.</p>
+                    <button>1890₸</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'lostacos/img/Baja-Taco.png' %}" alt="">
+                <hr>
+                <div class="card-inside">
+                    <h2>Baja Тако</h2>
+                    <p>Теплые мягкие кукурузные тортильи на гриле, наполненные вашим любимым мясом и покрытые свежеприготовленной острой или неострой сальсой, смесью лука и кинзы.</p>
+                    <button>1890₸</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="next-hr">
+    <div class="critic-review">
+        <h1 class="critic-title">Отзыв критика</h1>
+        <div class="critic-card">
+            <div class="critic-name">
+                <h2>Михаил Костин</h2>
+                <h5>Известный критик</h5>
+            </div>
+            <div class="critic-text">
+                <img src="{% static 'lostacos/img/critic-img.png' %}" alt="">
+                <p>"Los Tacos - это настоящее открытие для любителей мексиканской кухни! Блюда здесь просто восхитительные - каждый укус полон аутентичности и свежести ингредиентов. Тачос и бурритос просто волшебны! Обслуживание в ресторане заслуживает отдельного упоминания: приветливый персонал и быстрое обслуживание создают уютную атмосферу для наслаждения вкусной едой. Рекомендую Los Tacos всем, кто хочет погрузиться в удивительный мир мексиканской гастрономии!"</p>
+            </div>
+            <div class="review-mark">
+                <h4>Итоговая оценка:</h4>
+                <i class="fa-solid fa-star" style="color: orange;"></i>
+                <i class="fa-solid fa-star" style="color: orange;"></i>
+                <i class="fa-solid fa-star" style="color: orange;"></i>
+                <i class="fa-solid fa-star" style="color: orange;"></i>
+                <i class="fa-regular fa-star" style="color: orange;"></i>
+            </div>
+        </div>
+    </div>
 {% endblock %}

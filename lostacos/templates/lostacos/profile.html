@@ -1,0 +1,37 @@
+{% extends 'lostacos/layout.html' %}
+
+{% load static %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+    <div class="profile-card">
+        <div class="profile-info">
+            <img src="./images/avatar.png" alt="">
+            <div class="profile-contact-info">
+                <h1>{{ user.firstname }}  {{user.lastname}}</h1>
+                <div class="email-info">
+                    <span class="label">Эл. почта:</span>
+                    <span class="value">ranejk47@gmail.com</span>
+                </div>
+                <div class="phone-info">
+                    <span class="label">Телефон:</span>
+                    <span class="value">8-701-222-97-20</span>
+                </div>
+                <div class="dob-info">
+                    <span class="label">Дата рождения:</span>
+                    <span class="value">23 Января</span>
+                </div>
+                <a href="">Изменить</a>
+            </div>
+            <div class="bonus">
+                <h2>Б 99999</h2>
+            </div>
+        </div>
+        <div class="profile-line"></div>
+        <div class="profile-status">
+            <h1>Постоянный клиент</h1>
+            <h2>Число заказов: 20</h2>
+        </div>
+    </div>
+{% endblock %}

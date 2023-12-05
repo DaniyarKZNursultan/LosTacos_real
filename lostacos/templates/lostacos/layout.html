@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,9 +7,48 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'lostacos/css/main.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat Alternates:wght@400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,500&display=swap"
+    />
+    <script src="https://kit.fontawesome.com/351b7bfb40.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'main' %}">
+                <img src="{% static 'lostacos/img/logo.png' %}" alt="">
+            </a>
+        </div>
+        <div class="head-title">
+            Los Tacos
+        </div>
+        <div class="navigation">
+            <a href="">Меню</a>
+            <a href="{% url 'about' %}">О нас</a>
+            <a href="/reviews">Отзывы</a>
+            <a href="{% url 'login' %}">Авторизоваться</a>
+        </div>
+    </header>
     {% block content %}
     {% endblock %}
+    <footer>
+        <div class="social">
+            <h3>Следите за нами в: </h3>
+            <a href=""><i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i> Instagram</a>
+            <a href=""><i class="fa-brands fa-telegram fa-xl" style="color: #ffffff;"></i> Telegram</a>
+        </div>
+        <div class="certificates">
+            <img src="{% static 'lostacos/img/Halal.png' %}" alt="" class="halal">
+            <img src="{% static 'lostacos/img/Visa.png' %}" alt="" class="visa">
+            <img src="{% static 'lostacos/img/MasterCard.png' %}" alt="" class="master-card">
+            <img src="{% static 'lostacos/img/Kaspi-red.png' %}" alt="" class="kaspi-red">
+        </div>
+    </footer>
 </body>
 </html>

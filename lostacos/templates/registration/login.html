@@ -1,0 +1,34 @@
+{% extends 'lostacos/layout.html' %}
+
+{% load static %}
+
+{% block title %}Логин{% endblock %}
+
+{% block content %}
+    <div class="login-container">
+        <h1>Регистрация</h1>
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            <label for="firstName">Имя:</label>
+            <input type="text" id="firstName" name="firstname" required>
+
+            <label for="lastName">Фамилия:</label>
+            <input type="text" id="lastName" name="lastname" required>
+
+            <label for="phoneNumber">Телефонный номер:</label>
+            <input type="tel" id="phoneNumber" name="phonenumber" required>
+
+            <label for="email">Почта:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="dob">Дата рождения:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            {{ from.errors }}
+
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+{% endblock %}

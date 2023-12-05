@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fffefe;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    width: 100%; /* изменено на ширину 100% для адаптивности */
+    height: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    padding-left: 65px;
+    padding-right: 30px;
+    width: 71px;
+    height: 71px;
+}
+
+.head-title {
+    font-size: 48px;
+    font-family: Montserrat Alternates;
+    text-align: left;
+}
+
+.navigation {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 150px;
+}
+
+.navigation a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+
+.main {
+    background-image: url('/static/lostacos/img/Interiors_5-2000x1125.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 101vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main h1 {
+    font-size: 90px;
+    color: white;
+    margin: 0;
+}
+
+.main h1 i {
+    font-weight: 400;
+}
+
+.greeting {
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+.greeting h1 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 45px;
+    margin-bottom: 85px;
+}
+
+.greeting p {
+    text-align: center;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 85px;
+}
+
+.greeting-italic {
+    text-align: center;
+    font-weight: 400;
+    font-size: 45px;
+    font-style: italic;
+}
+
+.next-hr {
+    color: black;
+    width: 1600px;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 23px;
+    width: 350px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin: 30px 50px;
+}
+
+.card hr {
+    width: 263.82px;
+    margin-bottom: 30px;
+}
+
+.card-inside {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card img {
+    max-width: 232.05px;
+    max-height: 227.76px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.card h2 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.card p {
+    width: 280px;
+    text-align: center;
+    font-family: Montserrat Alternates;
+    font-size: 13px;
+    color: #777777;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.card button {
+    width: 149px;
+    height: 32px;
+    background-color: #C20000;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.card button:hover {
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.rec-title {
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.recommendation {
+    margin-bottom: 100px;
+}
+
+.critic-title {
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.critic-card {
+    width: 1135.65px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+.critic-name {
+    display: flex;
+    align-items: center;
+}
+
+.critic-text img {
+    margin-right: 50px;
+}
+
+.critic-name h2 {
+    font-size: 35px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.critic-name h5 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #777777;
+}
+
+.critic-text {
+    width: 911px;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+    color: #464545;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.critic-review {
+    margin-bottom: 100px;
+}
+
+.review-mark h4 {
+    margin-bottom: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: #3c3c3c;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.social h3 {
+    margin-right: 10px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.social a {
+    margin-right: 10px;
+    color: #ffffff;
+}
+
+.certificates {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.certificates img {
+    margin-left: 10px;
+}
+
+.about-quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 350px;
+    margin-bottom: 320px;
+}
+
+.about-quote h1 {
+    max-width: 1292px;
+    text-align: center;
+    margin: 0 auto;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    font-family: Montserrat Alternates;
+    margin-bottom: 40px;
+}
+
+.about-quote h2 {
+    max-width: 683px;
+    font-family: Montserrat Alternates;
+    font-size: 26px;
+    font-weight: 400;
+    margin-right: auto;
+    margin-left: 80px;
+}
+
+.history-title {
+    font-size: 45px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.line {
+    position: absolute;
+    width: 2px;
+    height: 200%;
+    background-color: #333;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.history-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 300px;
+}
+
+.history-card {
+    width: 742px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    padding: 30px;
+    margin-bottom: -180px;
+}
+
+.history-card:nth-child(odd) {
+    margin-left: 1000px;
+}
+
+.history-card:nth-child(even) {
+    margin-right: 1000px;
+}
+
+.history-card img {
+    margin-bottom: 40px;
+}
+
+.history-card h2 {
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.history-card p {
+    font-size: 20px;
+    color: #424242;
+}
+
+.profile-card {
+    width: 1300px;
+    height: 337px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 10px 80px;
+    margin: 200px auto;
+    border-radius: 8px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info img {
+    margin-right: 30px;
+}
+
+.profile-contact-info h1 {
+    font-weight: 400;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.profile-contact-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 150px;
+}
+
+.profile-contact-info a {
+    margin-top: 10px;
+    color: orange;
+}
+
+.email-info,
+.phone-info,
+.dob-info {
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.label {
+    color: grey;
+    margin-right: 5px;
+}
+
+.bonus {
+    background: linear-gradient(#77FF7C, #77FFEF);
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 50px;
+    margin-bottom: 120px;
+}
+
+.bonus h2 {
+    font-weight: bold;
+}
+
+.profile-line {
+    height: 200px;
+    width: 1px;
+    background-color: #000;
+    margin: 0 20px;
+}
+
+.profile-status {
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+
+.profile-status h1 {
+    color: orange;
+    margin-bottom: 10px;
+}
+
+.profile-status h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.login-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Изменили направление флекс-контейнера на столбец */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.login-container h1 {
+    margin: 40px 0;
+    font-weight: 500;
+}
+
+.login-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #333;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-top: 10px;
+    color: #333;
+}
+
+.login-form input {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.login-form button:hover {
+    background-color: #45a049;
+}
