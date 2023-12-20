@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'lostacos/layout.html' %}
+
+{% load static %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+    <div class="menu">
+        <h1>Меню</h1>
+        <div class="menu-list">
+            <div class="menu-obj">
+                <a href="{% url 'category_menu' 1 %}">
+                    <img src="{% static 'lostacos/img/burrito.png' %}" alt="">
+                    <h2>Буритто</h2>
+                </a>
+            </div>
+            <div class="menu-obj">
+                <a href="{% url 'category_menu' 2 %}">
+                    <img src="{% static 'lostacos/img/taco.png' %}" alt="">
+                    <h2>Тако</h2>
+                </a>
+            </div>
+            <div class="menu-obj">
+                <a href="{% url 'category_menu' 3 %}">
+                    <img src="{% static 'lostacos/img/zakuski.png' %}" alt="">
+                    <h2>Закуски</h2>
+                </a>
+            </div>
+            <div class="menu-obj">
+                <a href="{% url 'category_menu' 4 %}">
+                    <img src="{% static 'lostacos/img/salads.png' %}" alt="">
+                    <h2>Салаты</h2>
+                </a>
+            </div>
+            <div class="menu-obj">
+                <a href="{% url 'category_menu' 5 %}">
+                    <img src="{% static 'lostacos/img/Jarritos.png' %}" alt="">
+                    <h2>Напитки</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

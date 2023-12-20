@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'lostacos/layout.html' %}
 
-</body>
-</html>
+{% load static %}
+
+{% block title %}Отзывы{% endblock %}
+
+{% block content %}
+    <div class="reviews">
+        <h2>Отзывы</h2>
+        <ul class="reviews-list">
+            {% for review in reviews_list %}
+                <li class="review-item">
+                    <h3>{{ review.text }}</h3>
+                    <p>{{ review.user.username }} - <small>{{ review.created_at }}</small></p>
+                    {% if user.is_authenticated and review.user == user or user.is_staff %}
+                        <div class="edit-delete-links">
+                            <a href="{% url 'edit_review' review.id %}">Редактировать</a>
+                            <a href="{% url 'delete_review' review.id %}">Удалить</a>
+                        </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <hr>
+        <form method="post" class="review-form">
+            {% csrf_token %}
+            <label for="{{ form.text.id_for_label }}">Текст отзыва:</label>
+            {{ form.text }}
+            <button type="submit">Отправить отзыв</button>
+        </form>
+    </div>
+{% endblock %}

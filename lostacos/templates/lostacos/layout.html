@@ -17,38 +17,50 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300;1,500&display=swap"
     />
     <script src="https://kit.fontawesome.com/351b7bfb40.js" crossorigin="anonymous"></script>
+    <script src="{% static 'lostacos/js/view_cart.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="{% url 'main' %}">
-                <img src="{% static 'lostacos/img/logo.png' %}" alt="">
-            </a>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <a href="{% url 'main' %}">
+                    <img src="{% static 'lostacos/img/logo.png' %}" alt="">
+                </a>
+            </div>
+            <div class="head-title">
+                Los Tacos
+            </div>
+            <div class="navigation">
+                <a href="{% url 'menu' %}">Меню</a>
+                <a href="{% url 'about' %}">О нас</a>
+                <a href="{% url 'reviews' %}">Отзывы</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}">Профиль</a>
+                    <a href="{% url 'view_cart' %}">Корзина</a>
+                    <a href="{% url 'logout' %}">Выйти</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Авторизоваться</a>
+                {% endif %}
+            </div>
+        </header>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
         </div>
-        <div class="head-title">
-            Los Tacos
-        </div>
-        <div class="navigation">
-            <a href="">Меню</a>
-            <a href="{% url 'about' %}">О нас</a>
-            <a href="/reviews">Отзывы</a>
-            <a href="{% url 'login' %}">Авторизоваться</a>
-        </div>
-    </header>
-    {% block content %}
-    {% endblock %}
-    <footer>
-        <div class="social">
-            <h3>Следите за нами в: </h3>
-            <a href=""><i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i> Instagram</a>
-            <a href=""><i class="fa-brands fa-telegram fa-xl" style="color: #ffffff;"></i> Telegram</a>
-        </div>
-        <div class="certificates">
-            <img src="{% static 'lostacos/img/Halal.png' %}" alt="" class="halal">
-            <img src="{% static 'lostacos/img/Visa.png' %}" alt="" class="visa">
-            <img src="{% static 'lostacos/img/MasterCard.png' %}" alt="" class="master-card">
-            <img src="{% static 'lostacos/img/Kaspi-red.png' %}" alt="" class="kaspi-red">
-        </div>
-    </footer>
+        <footer>
+            <div class="social">
+                <h3>Следите за нами в: </h3>
+                <a href=""><i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i> Instagram</a>
+                <a href=""><i class="fa-brands fa-telegram fa-xl" style="color: #ffffff;"></i> Telegram</a>
+            </div>
+            <div class="certificates">
+                <img src="{% static 'lostacos/img/Halal.png' %}" alt="" class="halal">
+                <img src="{% static 'lostacos/img/Visa.png' %}" alt="" class="visa">
+                <img src="{% static 'lostacos/img/MasterCard.png' %}" alt="" class="master-card">
+                <img src="{% static 'lostacos/img/Kaspi-red.png' %}" alt="" class="kaspi-red">
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

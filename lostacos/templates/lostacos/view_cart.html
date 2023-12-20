@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'lostacos/layout.html' %}
+
+{% load static %}
+
+{% block title %}Корзина{% endblock %}
+
+{% block content %}
+    <div class="cart">
+        <div class="cart-content">
+            <ul>
+                {% for cart_item in cart_items %}
+                    <li>
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="{{ cart_item.dish.photo.url }}" alt="{{ cart_item.dish.name }}">
+                            </div>
+                            <div class="cart-item-details">
+                                <p>{{ cart_item.quantity }} x {{ cart_item.dish.name }} - {{ cart_item.subtotal }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <p>Общая стоимость: {{ total_price }}</p>
+            <button onclick="clearCart()">Очистить корзину</button>
+        </div>
+    </div>
+{% endblock %}

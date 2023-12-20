@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'lostacos/layout.html' %}
+
+{% load static %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+    {% for dish in dishes %}
+        <div class="menu-cards">
+            <div class="card">
+                {% if dish.photo %}
+                    <img src="{{ dish.photo.url }}" alt="{{ dish.name }}">
+                {% endif %}
+                <hr>
+                <div class="card-inside">
+                    <h2>{{ dish.name }}</h2>
+                    <p>{{ dish.description }}</p>
+                    <button><a href="{% url 'add_to_cart' dish.id %}">{{ dish.price }}</a></button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
