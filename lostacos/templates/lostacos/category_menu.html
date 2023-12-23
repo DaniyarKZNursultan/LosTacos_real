@@ -6,8 +6,8 @@
 
 {% block content %}
     <h1>{{ category.name }}</h1>
-    {% for dish in dishes %}
         <div class="menu-cards">
+            {% for dish in dishes %}
             <div class="card">
                 {% if dish.photo %}
                     <img src="{{ dish.photo.url }}" alt="{{ dish.name }}">
@@ -19,6 +19,6 @@
                     <button><a href="{% url 'add_to_cart' dish.id %}">{{ dish.price }}</a></button>
                 </div>
             </div>
+            {% endfor %}
         </div>
-    {% endfor %}
 {% endblock %}

@@ -170,6 +170,7 @@ header {
     color: #777777;
     font-weight: 500;
     margin-bottom: 30px;
+    height: 100px;
 }
 
 .card button {
@@ -388,14 +389,14 @@ footer {
 }
 
 .profile-card {
-    width: 1300px;
-    height: 337px;
+    max-width: 1000px;
+    height: 200px;
     background-color: white;
     display: flex;
     align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     padding: 10px 80px;
-    margin: 200px auto;
+    margin: 200px auto 0 auto;
     border-radius: 8px;
 }
 
@@ -615,10 +616,9 @@ footer {
 }
 
 .cart {
-    margin: 20px;
-    padding: 20px;
+    margin: 40px auto;
+    padding: 20px 80px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 130px;
     max-width: 1000px;
     border-radius: 8px;
     background-color: white;
