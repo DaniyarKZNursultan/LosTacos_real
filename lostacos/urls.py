@@ -1,7 +1,7 @@
 from django.urls import path, include
 from . import views
 from .views import profile_view, signup, category_menu, add_to_cart, view_cart, clear_cart, reviews, edit_review, \
-    delete_review
+    delete_review, WebPasswordResetView
 
 urlpatterns = [
     path('', views.index, name='main'),
@@ -15,7 +15,8 @@ urlpatterns = [
     path('edit_review/<int:review_id>/', edit_review, name='edit_review'),
     path('delete_review/<int:review_id>/', delete_review, name='delete_review'),
     path('profile', profile_view, name='profile'),
-    path('login', views.login, name='login'),
+    path('login', views.login_view, name='login'),
     path('register', signup, name='register'),
     path('accounts/logout/', views.logout_view, name='logout'),
+    path('password_reset/', WebPasswordResetView.as_view(), name='password_reset'),
 ]

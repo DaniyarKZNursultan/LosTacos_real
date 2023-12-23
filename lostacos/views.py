@@ -1,5 +1,6 @@
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import PasswordResetView
 from django.db.models import Sum
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -41,7 +42,7 @@ def view_cart(request):
     cart = Cart.objects.get(user=request.user)
     cart_items = CartItem.objects.filter(cart=cart)
     total_price = cart.total_price
-    return render(request, 'lostacos/view_cart.html', {'cart': cart, 'cart_items': cart_items, 'total_price': total_price})
+    return render(request, 'lostacos/profile.html', {'cart': cart, 'cart_items': cart_items, 'total_price': total_price})
 
 
 @login_required
@@ -56,7 +57,7 @@ def clear_cart(request):
     cart.total_price = 0
     cart.save()
 
-    return redirect('lostacos/view_cart.html')
+    return redirect('lostacos/profile.html')
 
 
 
@@ -137,7 +138,7 @@ def delete_review(request, review_id):
 def profile_view(request):
     return render(request, 'lostacos/profile.html')
 
-def login(request):
+def login_view(request):
     return render(request, 'registration/login.html')
 
 def signup(request):
@@ -153,3 +154,8 @@ def signup(request):
 def logout_view(request):
     logout(request)
     return redirect('/') # на главную страницу сайта
+
+class WebPasswordResetView(PasswordResetView):
+    pass
+
+
