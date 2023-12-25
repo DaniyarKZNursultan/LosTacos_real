@@ -1,7 +1,12 @@
 from django.urls import path, include
 from . import views
 from .views import profile_view, signup, category_menu, add_to_cart, view_cart, clear_cart, reviews, edit_review, \
-    delete_review, WebPasswordResetView
+    delete_review, UserForgotPasswordView, UserPasswordResetConfirmView
+from django.contrib.auth import views as auth_views
+
+
+
+
 
 urlpatterns = [
     path('', views.index, name='main'),
@@ -18,5 +23,6 @@ urlpatterns = [
     path('login', views.login_view, name='login'),
     path('register', signup, name='register'),
     path('accounts/logout/', views.logout_view, name='logout'),
-    path('password_reset/', WebPasswordResetView.as_view(), name='password_reset'),
+    path('accounts/password-reset/', UserForgotPasswordView.as_view(), name='password-reset'),
+    path('set-new-password/<uidb64>/<token>/', UserPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 ]

@@ -1,13 +1,14 @@
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import PasswordResetView
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
+from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Sum
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import FormView
 
-from .forms import RegisterForm, ReviewForm
+from .forms import RegisterForm, ReviewForm, UserForgotPasswordForm, UserSetNewPasswordForm
 from .models import Dish, Category, Cart, CartItem, Review
 
 
@@ -155,7 +156,34 @@ def logout_view(request):
     logout(request)
     return redirect('/') # на главную страницу сайта
 
-class WebPasswordResetView(PasswordResetView):
-    pass
+
+class UserForgotPasswordView(SuccessMessageMixin, PasswordResetView):
+    """
+    Представление по сбросу пароля по почте
+    """
+    form_class = UserForgotPasswordForm
+    template_name = 'registration/user_password_reset.html'
+    success_url = reverse_lazy('main')
+    success_message = 'Письмо с инструкцией по восстановлению пароля отправлена на ваш email'
+    subject_template_name = 'registration/password_subject_reset_mail.txt'
+    email_template_name = 'registration/password_reset_mail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Запрос на восстановление пароля'
+        return context
 
 
+class UserPasswordResetConfirmView(SuccessMessageMixin, PasswordResetConfirmView):
+    """
+    Представление установки нового пароля
+    """
+    form_class = UserSetNewPasswordForm
+    template_name = 'registration/user_password_set_new.html'
+    success_url = reverse_lazy('home')
+    success_message = 'Пароль успешно изменен. Можете авторизоваться на сайте.'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Установить новый пароль'
+        return context
