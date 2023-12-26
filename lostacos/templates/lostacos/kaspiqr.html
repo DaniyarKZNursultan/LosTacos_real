@@ -1,0 +1,12 @@
+{% extends 'lostacos/layout.html' %}
+
+{% load static %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+    <div class="kaspi-qr">
+        <h1 >Закажите через каспи QR, просто отсканируйте код</h1>
+        <img src="{% static 'lostacos/img/kaspiqr.jpeg' %}" alt="" class="IMgKAspi">
+    </div>
+{% endblock %}
