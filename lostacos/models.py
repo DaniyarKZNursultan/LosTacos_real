@@ -17,7 +17,6 @@ class Dish(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     photo = models.ImageField(upload_to='dishes/', null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    stock_quantity = models.PositiveIntegerField(default=0)  # Количество на складе
 
     def __str__(self):
         return self.name
