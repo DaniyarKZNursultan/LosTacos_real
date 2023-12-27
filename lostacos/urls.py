@@ -1,7 +1,7 @@
 from django.urls import path, include
 from . import views
 from .views import profile_view, signup, category_menu, add_to_cart, view_cart, clear_cart, reviews, edit_review, \
-    delete_review, UserForgotPasswordView, UserPasswordResetConfirmView, kaspi_qr
+    delete_review, UserForgotPasswordView, UserPasswordResetConfirmView, kaspi_qr, order
 from django.contrib.auth import views as auth_views
 
 
@@ -18,6 +18,7 @@ urlpatterns = [
     path('clear_cart/', clear_cart, name='clear_cart'),
     path('reviews/', reviews, name='reviews'),
     path('kaspi_qr/', kaspi_qr, name='kaspi_qr'),
+    path('order/', order, name='order'),
     path('edit_review/<int:review_id>/', edit_review, name='edit_review'),
     path('delete_review/<int:review_id>/', delete_review, name='delete_review'),
     path('profile', profile_view, name='profile'),

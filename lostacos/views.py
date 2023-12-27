@@ -21,6 +21,9 @@ def about(request):
 def kaspi_qr(request):
     return render(request, 'lostacos/kaspiqr.html')
 
+def order(request):
+    return render(request, 'lostacos/order.html')
+
 @login_required
 def menu(request):
     dishes = Dish.objects.all()

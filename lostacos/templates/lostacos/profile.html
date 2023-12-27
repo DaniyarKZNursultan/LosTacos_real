@@ -37,9 +37,9 @@
             <button onclick="clearCart()" style="margin-bottom: 40px;">Очистить корзину</button>
             <h1>Заказать:</h1>
             <div class="buttons-massive">
-                <a href="{% url 'kaspi_qr' %}"><button>Kaspi QR</button></a>
-                <a href=""><button>Наличка</button></a>
-                <a href=""><button>Карта</button></a>
+                <a onclick="clearCart()" href="{% url 'kaspi_qr' %}"><button>Kaspi QR</button></a>
+                <a onclick="clearCart()" href="{% url 'order' %}"><button>Наличка</button></a>
+                <a onclick="clearCart()" href="{% url 'order' %}"><button>Карта</button></a>
             </div>
         </div>
     </div>
